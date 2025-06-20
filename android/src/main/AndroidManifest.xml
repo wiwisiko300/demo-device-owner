@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.device_control">
 
+    <!-- สิทธิ์ในการเป็น Device Admin -->
+    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
+    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
+
     <application>
 
+        <!-- กำหนด Receiver ที่รับสิทธิ์ Device Admin -->
         <receiver
             android:name=".AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN"
@@ -16,6 +21,4 @@
         </receiver>
 
     </application>
-
-    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
 </manifest>
